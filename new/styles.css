@@ -1,0 +1,51 @@
+
+.nav{align-items: center;
+gap:3%}
+body{background-color:#121212;}
+.nav-link{background-color: #00ff00;
+    color:black;
+    border-radius: 50px;
+    font-family: "Teko", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size:large;
+}
+img{height:200px;}
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 360px; /* Adjust based on your video's aspect ratio */
+    overflow: hidden;
+    background-color: #121212; /* Dark grey, ensuring it matches your desired background */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: relative;
+    z-index: 1; /* Keep the video under the gradient overlays */
+}
+
+.video-container::before,
+.video-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2; /* Overlay gradients above the video */
+    pointer-events: none; /* Allow interaction with the video below */
+}
+
+.video-container::before {
+    top: 0;
+    height: 100px; /* Adjust height for a more pronounced gradient */
+    background: linear-gradient(to bottom, #121212, rgba(18, 18, 18, 0)); /* Start solid, fade to transparent */
+}
+
+.video-container::after {
+    bottom: 0;
+    height: 100px; /* Adjust height for a more pronounced gradient */
+    background: linear-gradient(to top, #121212, rgba(18, 18, 18, 0)); /* Start solid, fade to transparent */
+}
+
